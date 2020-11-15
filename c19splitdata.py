@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Covid-19 Dataset Splitter
 """
@@ -12,7 +14,7 @@ from src.covid19 import DataSplitterApp
 PATH_DATASET = "./data/obec.csv"
 
 # Path to output directory
-PATH_DATADIR = "./data"
+PATH_OUTPUTDIR = "/home/camlost/public_html/Covid19_obce"
 
 # Log file path
 PATH_LOG = "./log/c19splitdata.log"
@@ -26,10 +28,8 @@ try:
         level=logging.DEBUG)
     logging.info("Started.")
 
-    app = DataSplitterApp(
-        data_path=PATH_DATASET,
-        out_dir=PATH_DATADIR)
-    app.run()
+    app = DataSplitterApp(100)
+    app.run(PATH_DATASET, PATH_OUTPUTDIR)
 
     logging.info("Finished.")
 except KeyboardInterrupt:
