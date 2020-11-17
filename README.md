@@ -23,3 +23,6 @@ Then, this project comes into play.
 The dataset is processed and divided into individual CSV files - each for a city.
 The files are published to be ready for importing into a Google Spreadsheet
 where a chart is generated and published for further use.
+
+Example:
+https://bit.ly/38FMKM0
