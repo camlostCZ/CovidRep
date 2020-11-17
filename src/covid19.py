@@ -36,7 +36,7 @@ class DataSplitterApp:
 
     def split_datafile(self, data_path: str, out_dir: str) -> None:
         """
-        Split CSV file into smaller ones - one per city.
+        Splits CSV file into smaller ones - one per city.
         Only records younger then `history` days are included.
         Output files will be stored in `out_dir`.
 
@@ -64,7 +64,7 @@ class DataSplitterApp:
 
     def _save_datarow(self, datarow: Dict[str, str], out_dir: str) -> None:
         """
-        Save data row to a CSV file.
+        Saves data row to a CSV file.
 
         Args:
             datarow: A dictionary of columns and their values (CSV row).
@@ -85,7 +85,7 @@ class DataSplitterApp:
 
     def run(self, data_path: str, out_dir: str) -> None:
         """
-        Run the splitting procedure.
+        Runs the splitting procedure.
 
         Args:
             data_path: Path to source CSV file.
