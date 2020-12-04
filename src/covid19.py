@@ -45,12 +45,19 @@ class DataSplitterApp:
             out_dir: Path to output directory.
         """
 
+        def _progress(count: int):
+            steps = "|/-\\"
+            mark = steps[count % len(steps)]
+            print("\b" + mark, end='')
+
         now = datetime.datetime.now()
         try:
             with open(data_path, "r", encoding="utf8", newline="") as datafile:
+                print("Parsing source dataset:   ")
                 reader = csv.DictReader(datafile, delimiter=";")
                 row_count = 0
                 for row in reader:
+                    _progress(row_count)
                     row_count += 1
                     row_date = datetime.datetime.strptime(row["datum"], "%Y-%m-%d")
                     delta = now - row_date
