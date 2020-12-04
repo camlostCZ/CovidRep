@@ -25,7 +25,7 @@ try:
         filename=PATH_LOG,
         format="%(asctime)s %(levelname)s %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
-        level=logging.DEBUG)
+        level=logging.INFO)
     logging.info("Started.")
 
     app = DataSplitterApp(100)
